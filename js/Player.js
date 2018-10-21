@@ -15,27 +15,27 @@ class Player {
 
     switch (direction) {
       case "up":
-        this.y -= this.size /5
+        this.y -= this.size 
         if (this.y == yMin){
           this.y = yMax;
         }
         break;
       case "right":
-        this.x += this.size /5;
+        this.x += this.size ;
         if (this.x == xMax){
-          this.x = xMin+10
+          this.x = xMin
         }
         break;
       case "down":
-        this.y += this.size /5
+        this.y += this.size 
         if (this.y == yMax){
           this.y = yMin
         }
         break;
       case "left":
-        this.x -= this.size /5
+        this.x -= this.size 
         if (this.x < xMin){
-          this.x = xMax-10
+          this.x = xMax
         }
         break;
     }
