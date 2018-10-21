@@ -17,25 +17,25 @@ class Player {
       case "up":
         this.y -= this.size 
         if (this.y == yMin){
-          this.y = yMax;
-        }
+          this.y = yMax -this.size;
+        } 
         break;
       case "right":
         this.x += this.size ;
         if (this.x == xMax){
-          this.x = xMin
+          this.x = xMin + this.size
         }
         break;
       case "down":
         this.y += this.size 
         if (this.y == yMax){
-          this.y = yMin
+          this.y = yMin + this.size
         }
         break;
       case "left":
         this.x -= this.size 
-        if (this.x < xMin){
-          this.x = xMax
+        if (this.x == xMin){
+          this.x = xMax - this.size
         }
         break;
     }

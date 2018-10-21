@@ -87,19 +87,23 @@ function drawEverything() {
     
     // }
     
+
+    var counter = 0;
     function update() {
 
       if (specialCdX == p1.x && specialCdY == p1.y){
-        newGridArray = []
-        specialCd = []
-        randomArray(10)
-        generateSpecial()
-        specialCdY = specialCd[0]*80
-        specialCdX = specialCd[1]*80
-        createNewGridArray()
-        drawGrid()
+        newGridArray = [];
+        specialCd = [];
+        randomArray(10);
+        generateSpecial();
+        specialCdY = specialCd[0]*80;
+        specialCdX = specialCd[1]*80;
+        createNewGridArray();
+        drawGrid();
+        counter++;
+        $('#score').text(counter)
       }
-      drawEverything()
+      drawEverything();
     }
     
     // drawObjects()
