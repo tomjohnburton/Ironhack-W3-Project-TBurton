@@ -37,7 +37,7 @@ $('.screens').toggle()
 var canvas = document.getElementById('canvas')
 var ctx = canvas.getContext('2d')
 var size = 50
-var p1 = new Player(ctx, 80, "black")
+var p1 = new Player(ctx, 40, "black")
 
 var width = canvas.width;
 var height = canvas.height;
@@ -96,13 +96,19 @@ function drawEverything() {
         specialCd = [];
         randomArray(10);
         generateSpecial();
-        specialCdY = specialCd[0]*80;
-        specialCdX = specialCd[1]*80;
+        specialCdY = specialCd[0]*40;
+        specialCdX = specialCd[1]*40;
+        p1.x = 0;
+        p1.y = 0;
         createNewGridArray();
+        structuredArray(newGridArray)
         drawGrid();
         counter++;
         $('#score').text(counter)
       }
+
+
+
       drawEverything();
     }
     
@@ -132,18 +138,24 @@ function drawEverything() {
 
 function drawGrid(){
   newGridArray[specialCd[0]][specialCd[1]] = 4
-  for (var col = 0 ; col < 10; col++){
-    for (var row = 0; row < 10; row++){
+  for (var col = 0 ; col < 20; col++){
+    for (var row = 0; row < 20; row++){
       if (newGridArray[col][row] == 4){
       ctx.fillStyle = 'black'
-      ctx.fillRect(row*80,col*80,80,80)}
+      ctx.fillRect(row*40,col*40,80,80)}
     
       if (newGridArray[col][row]<4){
       ctx.fillStyle = colors[newGridArray[col][row]]
-      ctx.fillRect(row*80,col*80,80,80)}
+      ctx.fillRect(row*40,col*40,80,80)}
       }
     }
     }
 
     console.log(p1.x, p1.y)
     
+
+
+    /////////////////////////////////////////////////////////
+
+    // GAME OVER 
+
